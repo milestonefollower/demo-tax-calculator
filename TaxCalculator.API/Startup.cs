@@ -43,6 +43,11 @@ namespace TaxCalculator.API
                 dbContext.Database.EnsureCreated();
             }
 
+            app.UseCors(opt => 
+                opt.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
